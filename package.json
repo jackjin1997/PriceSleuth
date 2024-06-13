@@ -1,0 +1,14 @@
+{
+  "name": "PriceSleuth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jackjin1997/PriceSleuth.git",
+  "author": "<jackjin@stellarrover.com>",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "mongodb": "^6.7.0",
+    "nodemailer": "^6.9.13",
+    "puppeteer": "^22.11.0"
+  }
+}

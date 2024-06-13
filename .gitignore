@@ -1,0 +1,19 @@
+node_modules
+npm-debug.log
+start.sh
+.avoscloud
+.leancloud
+public
+*.log
+
+# VIM
+*~
+*.swp
+
+dist
+
+HuaweiCloud-SDK-Access.log
+.env
+
+/data
+devops/data
