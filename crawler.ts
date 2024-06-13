@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer");
-const amqp = require("amqplib");
+import puppeteer from "puppeteer";
+import * as amqp from "amqplib";
 
 async function crawl() {
   const browser = await puppeteer.launch();
@@ -10,14 +10,18 @@ async function crawl() {
 
   // 获取商品信息
   const products = await page.evaluate(() => {
-    let results = [];
+    let results: { name: string; price: string; link: string }[] = [];
     let items = document.querySelectorAll(".product-item");
     items.forEach((item) => {
-      results.push({
-        name: item.querySelector(".product-name").innerText,
-        price: item.querySelector(".product-price").innerText,
-        link: item.querySelector(".product-link").href,
-      });
+      const name = item.querySelector(".product-name")?.textContent;
+      const price = item.querySelector(".product-price")?.textContent;
+      const link = item.querySelector(".product-link")?.textContent;
+      if (name && price && link)
+        results.push({
+          name,
+          price,
+          link,
+        });
     });
     return results;
   });

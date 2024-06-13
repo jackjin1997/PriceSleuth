@@ -1,6 +1,6 @@
-const amqp = require("amqplib");
-const { MongoClient } = require("mongodb");
-const nodemailer = require("nodemailer");
+import * as amqp from "amqplib";
+import { MongoClient } from "mongodb";
+import nodemailer from "nodemailer";
 
 const uri = "mongodb://localhost:27017";
 const client = new MongoClient(uri);
