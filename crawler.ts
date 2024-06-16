@@ -6,7 +6,7 @@ async function crawl() {
   const page = await browser.newPage();
 
   // 访问目标网站
-  await page.goto("https://example-ecommerce-site.com");
+  await page.goto("https://taobao.com");
 
   // 获取商品信息
   const products = await page.evaluate(() => {
